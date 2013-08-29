@@ -8,7 +8,7 @@ This template is based on the blog article [My Clojure Workflow, Reloaded].
 [tools.namespace]: https://github.com/clojure/tools.namespace
 [My Clojure Workflow, Reloaded]: http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded
 
-* uberrepl
+# uberrepl
 
 Strictly speaking this template is just a variation of Stuart Sierra's reloaded template. The rationale behind it that if this template is used on multiple projects then those projects are easily handled by the [uberrepl](https://github.com/benedekfazekas/uberrepl) therefore you can easily create a REPL which contains all of these projects and enables the developer to batch reload, restart, stop them.
 
@@ -29,7 +29,7 @@ and download the template.
 
 ## Usage
 
-Run `lein new reloaded com.example/new-project` to generate a new
+Run `lein new reloaded-uberrepl com.example/new-project` to generate a new
 project skeleton in the `new-project` directory, with a structure like
 this:
 
