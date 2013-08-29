@@ -1,11 +1,11 @@
-(ns leiningen.new.reloaded
+(ns leiningen.new.reloaded-uberrepl
   (:require [clojure.string :as str])
   (:use [leiningen.new.templates :only [renderer name-to-path ->files
                                         sanitize-ns project-name year]]))
 
 (def render (renderer "reloaded/templates"))
 
-(defn reloaded
+(defn reloaded-uberrepl
   "Project with tools.namespace, profiles, and user.clj
 
 This template generates a project skeleton using tools.namespace and
@@ -27,6 +27,7 @@ project. Names without a groupId are also accepted."
                 :name artifactId  ; used by ->files
                 :year (year)
                 :main-ns (sanitize-ns name)
+                :name-as-file (.replaceAll artifactId "-" "_")
                 :path (name-to-path name)}]
       (->files data
                [".gitignore" (render ".gitignore")]
@@ -34,4 +35,5 @@ project. Names without a groupId are also accepted."
                ["README.md" (render "README.md" data)]
                ["project.clj" (render "project.clj" data)]
                ["src/{{path}}.clj" (render "main.clj" data)]
-               ["dev/user.clj" (render "user.clj" data)]))))
+               ["dev/user.clj" (render "user.clj" data)]
+               ["dev/project_repl/{{name-as-file}}.clj" (render "repl.clj" data)]))))
