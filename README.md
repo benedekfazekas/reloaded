@@ -1,13 +1,16 @@
 # reloaded
 
 A Leiningen 2 template to generate project skeletons using
-[tools.namespace] and a `:dev` profile with a `user.clj` file.
+[tools.namespace] and a `:dev` profile in an [uberrepl](https://github.com/benedekfazekas/uberrepl) compliant way.
 
 This template is based on the blog article [My Clojure Workflow, Reloaded].
 
 [tools.namespace]: https://github.com/clojure/tools.namespace
 [My Clojure Workflow, Reloaded]: http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded
 
+* uberrepl
+
+Strictly speaking this template is just a variation of Stuart Sierra's reloaded template. The rationale behind it that if this template is used on multiple projects then those projects are easily handled by the [uberrepl](https://github.com/benedekfazekas/uberrepl) therefore you can easily create a REPL which contains all of these projects and enables the developer to batch reload, restart, stop them.
 
 ## Releases and Dependency Information
 
@@ -36,6 +39,8 @@ this:
     ├── project.clj
     ├── dev
     │   └── user.clj
+    │   └── project_repl
+    │       └── new_project.clj
     └── src
         └── com
             └── example
@@ -43,7 +48,8 @@ this:
 
 The `dev` directory contains files that you will use only during
 interactive development, including `user.clj` which is automatically
-loaded by Clojure at startup.
+loaded by Clojure at startup. The `user.clj` simply delegates everything
+to a dedicated project repl namespace.
 
 The `src` directory contains your application source files.
 
@@ -51,29 +57,5 @@ See the [article] for an explanation of how I use these files to
 develop an application.
 
 [article]: http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded
-
-
-## Change Log
-
-* Version 0.1.0 released on 2013-Aug-05
-
-
-## Forking
-
-I created this template for my own personal use, and I am publishing
-it in the hopes that others will find it useful. I encourage you to
-fork and modify this template to suit your own needs and personal
-workflow, but I am unlikely to merge any changes into this repository.
-
-
-## Copyright and License
-
-Copyright © 2013 Stuart Sierra. All rights reserved. The use and
-distribution terms for this software are covered by the
-[Eclipse Public License 1.0] which can be found in the file
-epl-v10.html at the root of this distribution. By using this software
-in any fashion, you are agreeing to be bound by the terms of this
-license. You must not remove this notice, or any other, from this
-software.
 
 [Eclipse Public License 1.0]: http://opensource.org/licenses/eclipse-1.0.php
