@@ -13,22 +13,23 @@
      [clojure.tools.namespace.repl :refer :all]
      [clojure.tools.namespace.move :refer :all]))
 
-(def dev-{{name}})
+(def {{name}}-system
+  nil)
 
-(defn create-and-start-dev-{{name}}
-  "Creates and starts dev system instance, updates var dev-{{name}}"
+(defn create-and-start-{{name}}
+  "Creates and starts system instance, updates var {{name}}-system"
   []
   ;;TODO
   )
 
-(defn stop-dev-{{name}}
-  "Stops the dev system if it is running, updates var dev-{{name}}"
+(defn stop-{{name}}
+  "Stops the system if it is running, updates var {{name}}-system"
   []
   ;;TODO
   )
 
-(defn reset-dev-{{name}}
-  "Stops the dev system, reloads modified source files and restarts the system."
+(defn reset-{{name}}
+  "Stops the system, reloads modified source files and restarts the system."
   []
-  (stop-dev-{{name}})
-  (refresh :after 'project-repl.{{name}}/create-and-start-dev-{{name}}))
+  (stop-{{name}})
+  (refresh :after 'project-repl.{{name}}/create-and-start-{{name}}))
