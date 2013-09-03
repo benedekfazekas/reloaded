@@ -34,6 +34,6 @@ project. Names without a groupId are also accepted."
                ["epl-v10.html" (render "epl-v10.html")]
                ["README.md" (render "README.md" data)]
                ["project.clj" (render "project.clj" data)]
-               ["src/{{path}}.clj" (render "main.clj" data)]
+               ["src/{{path}}/core.clj" (render "core.clj" data)]
                ["dev/user.clj" (render "user.clj" data)]
                ["dev/project_repl/{{name-as-file}}.clj" (render "repl.clj" data)]))))
