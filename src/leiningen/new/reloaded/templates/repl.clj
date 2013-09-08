@@ -13,23 +13,23 @@
      [clojure.tools.namespace.repl :refer :all]
      [clojure.tools.namespace.move :refer :all]))
 
-(def {{name}}-system
+(def system
   nil)
 
-(defn create-and-start-{{name}}
-  "Creates and starts system instance, updates var {{name}}-system"
+(defn create-and-start
+  "Creates and starts system instance, updates var system"
   []
   ;;TODO
   )
 
-(defn stop-{{name}}
-  "Stops the system if it is running, updates var {{name}}-system"
+(defn stop
+  "Stops the system if it is running, updates var system"
   []
   ;;TODO
   )
 
-(defn reset-{{name}}
+(defn reset
   "Stops the system, reloads modified source files and restarts the system."
   []
-  (stop-{{name}})
-  (refresh :after 'project-repl.{{name}}/create-and-start-{{name}}))
+  (stop)
+  (refresh :after 'project-repl.{{name}}/create-and-start))
