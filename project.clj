@@ -1,4 +1,4 @@
-(defproject reloaded-uberrepl/lein-template "0.2.0"
+(defproject reloaded-uberrepl/lein-template "0.2.1-SNAPSHOT"
   :description "A Leiningen 2 template to generate project skeletons using
   tools.namespace and a :dev profile in an uberrepl compliant way. Based on Stuart
   Sierra's reloaded."
